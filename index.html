@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Edoardo Pellegrino — Economics & Econometrics student focused on financial markets. Links to LinkedIn, Substack, and CV." />
   <title>Edoardo Pellegrino</title>
+
   <style>
     :root{
       --bg:#0b0d12;
@@ -18,10 +19,9 @@
       --radius: 18px;
       --max: 1080px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       font-family:var(--sans);
@@ -36,232 +36,159 @@
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:14px 16px;
-      border:1px solid var(--line); border-radius:999px;
-      backdrop-filter: blur(10px);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:999px;
       background:rgba(17,21,37,.55);
-      position:sticky; top:14px; z-index:10;
+      position:sticky; top:14px;
     }
-    .brand{display:flex; align-items:center; gap:10px; min-width:180px}
+    .brand{display:flex; gap:10px; align-items:center}
     .dot{
       width:12px; height:12px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 5px rgba(255,122,24,.08);
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
     }
-    .nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .nav{display:flex; gap:10px}
     .nav a{
       text-decoration:none; color:var(--muted);
       padding:8px 10px; border-radius:999px;
-      border:1px solid transparent;
     }
-    .nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .nav a:hover{color:var(--text)}
     .hero{
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      display:grid; grid-template-columns:1.2fr .8fr; gap:18px;
       margin-top:18px;
     }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-    }
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
     .card{
-      border:1px solid var(--line);
       background:rgba(17,21,37,.55);
+      border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow:var(--shadow);
     }
     .pad{padding:22px}
-    .h1{font-size: clamp(28px, 3vw, 40px); margin:0 0 8px}
-    .subtitle{color:var(--muted); margin:0 0 16px; font-size: 16px}
-    .chips{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 0}
+    .h1{font-size:clamp(28px,3vw,40px); margin:0 0 8px}
+    .subtitle{color:var(--muted); margin-bottom:16px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px}
     .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:999px;
       border:1px solid var(--line);
-      color:var(--muted);
-      background:rgba(0,0,0,.12);
+      border-radius:999px;
+      padding:8px 10px;
       font-size:13px;
-      white-space:nowrap;
+      color:var(--muted);
     }
-    .chip b{color:var(--text); font-weight:600}
     .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
     .btn{
-      appearance:none; border:none; cursor:pointer;
-      border-radius:12px; padding:10px 12px;
-      background:rgba(255,255,255,.06);
+      padding:10px 12px;
+      border-radius:12px;
       border:1px solid var(--line);
-      color:var(--text);
+      background:rgba(255,255,255,.06);
       text-decoration:none;
-      display:inline-flex; align-items:center; gap:10px;
+      font-size:14px;
     }
-    .btn:hover{background:rgba(255,255,255,.10)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(255,122,24,.95), rgba(54,194,255,.75));
-      border-color: rgba(255,255,255,.10);
-      color:#0b0d12;
-      font-weight:700;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#0b0d12; font-weight:700;
     }
-    .btn.primary:hover{filter:brightness(1.05)}
-    .btn .mono{font-family:var(--mono); font-size:12px; opacity:.9}
-    .small{color:var(--muted); font-size:13px}
     .sideGrid{display:grid; gap:12px}
     .kpi{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-      padding:14px 14px; border-radius:14px;
       border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
       background:rgba(0,0,0,.10);
     }
-    .kpi .label{color:var(--muted); font-size:12px}
-    .kpi .value{font-weight:700; font-size:14px}
-    .section{margin-top:22px}
-    .section h2{margin:0 0 10px; font-size:18px}
-    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    @media (max-width: 900px){ .grid2{grid-template-columns:1fr} }
-    .item{
-      padding:16px; border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(0,0,0,.10);
-    }
-    .item h3{margin:0 0 4px; font-size:15px}
-    .item .meta{color:var(--muted); font-size:12px; margin-bottom:10px}
     footer{
       margin-top:32px;
+      display:flex; justify-content:space-between; flex-wrap:wrap;
       color:var(--muted);
-      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
     }
-    .monoLink{font-family:var(--mono); font-size:12px; color:var(--muted); text-decoration:none}
-    .monoLink:hover{color:var(--text)}
-    .divider{height:1px; background:var(--line); margin:18px 0}
+    .monoLink{font-family:var(--mono); font-size:12px; text-decoration:none}
   </style>
 </head>
 
 <body>
-  <div class="wrap" id="top">
+<div class="wrap" id="top">
 
-    <header class="topbar">
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <div>
-          <div style="font-weight:800; letter-spacing:.2px">Edoardo Pellegrino</div>
-          <div class="small">Economics &amp; Economics • Econometrics • Finance</div>
-        </div>
-      </div>
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <div>
+      <div style="font-weight:800">Edoardo Pellegrino</div>
+      <div style="font-size:13px;color:var(--muted)">Economics &amp; Econometrics • Financial Markets</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<main>
 
-    <main>
+<section class="hero">
+  <div class="card pad">
+    <h1 class="h1">Edoardo Pellegrino</h1>
+    <p class="subtitle">
+      Economics &amp; Econometrics undergraduate focused on financial markets.
+      Market research and analysis published on Substack.
+    </p>
 
-      <section class="hero">
-        <div class="card pad">
-          <h1 class="h1">Edoardo Pellegrino.</h1>
-          <p class="subtitle">
-            Economics &amp; Econometrics undergraduate focused on financial markets. I keep my market work and write-ups on Substack.
-          </p>
+    <div class="chips">
+      <span class="chip"><b>Now</b> BSc Economics &amp; Econometrics — City St George’s</span>
+      <span class="chip"><b>Next</b> MSc Finance — CUHK (2026–27)</span>
+      <span class="chip"><b>Focus</b> FX • Commodities • Macro</span>
+    </div>
 
-          <div class="chips">
-            <span class="chip"><b>Now</b> BSc Economics &amp; Econometrics (City St George’s)</span>
-            <span class="chip"><b>Next</b> MSc Finance (CUHK, 2026–27)</span>
-            <span class="chip"><b>Focus</b> FX • Commodities • Macro</span>
-          </div>
-
-          <div class="ctaRow">
-            <a class="btn primary" href="https://substack.com/@edoardopellegrino" target="_blank" rel="noreferrer">
-              Substack <span class="mono">→</span>
-            </a>
-            <a class="btn" href="https://www.linkedin.com/in/edoardopellegrino27/" target="_blank" rel="noreferrer">
-              LinkedIn <span class="mono">↗</span>
-            </a>
-            <a class="btn" href="https://drive.google.com/file/d/15a0BspCU0NP-sijOtTiHoSofYYI99a8F/view?usp=sharing" target="_blank" rel="noreferrer">
-              CV <span class="mono">PDF</span>
-            </a>
-          </div>
-
-          <div class="divider"></div>
-          <div class="small">
-            Places lived: Milan (Italy) • Bangkok (Thailand) • London (UK) • New Jersey (USA) • Hong Kong (upcoming)
-          </div>
-        </div>
-
-        <aside class="card pad">
-          <div class="sideGrid">
-
-            <div class="kpi">
-              <div>
-                <div class="label">Tools</div>
-                <div class="value">Excel • Stata • R • Python • Bloomberg • FRED</div>
-              </div>
-              <div class="mono">01</div>
-            </div>
-
-            <div class="kpi">
-              <div>
-                <div class="label">Languages</div>
-                <div class="value">English • Italian • French • Mandarin (Beginner–Intermediate)</div>
-              </div>
-              <div class="mono">02</div>
-            </div>
-
-            <div class="kpi">
-              <div>
-                <div class="label">Interests</div>
-                <div class="value">Macroeconomics • Global Markets • Digital Assets • FinTech • Value Investing • Quantiative Analysis</div>
-              </div>
-              <div class="mono">03</div>
-            </div>
-
-          </div>
-        </aside>
-      </section>
-
-      <section id="about" class="section">
-        <div class="card pad">
-          <h2>About</h2>
-          <p style="margin:0; color:var(--muted)">
-            Enthusiastic final year econometrics undergraduate with experience in macroeconomic and equity research,
-            and structured products. Fluent in English, Italian, and French with interests in finance. Aiming to pursue
-            graduate studies before seeking to start a career within the financial service industry.
-          </p>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="card pad">
-          <h2>Contact</h2>
-          <div class="grid2">
-            <div class="item">
-              <h3>Email</h3>
-              <div class="meta">Best way to reach me</div>
-              <a class="btn" href="mailto:edoardo.pellegrino@citystgeorges.ac.uk">
-                edoardo.pellegrino@citystgeorges.ac.uk
-              </a>
-            </div>
-
-            <div class="item">
-              <h3>Phone</h3>
-              <div class="meta">UK number</div>
-              <a class="btn" href="tel:+447564367139">+44 7564 367139</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div>© <span id="year"></span> Edoardo Pellegrino</div>
-        <div style="display:flex; gap:14px; flex-wrap:wrap">
-          <a class="monoLink" href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Back to top</a>
-          <a class="monoLink" href="https://drive.google.com/file/d/15a0BspCU0NP-sijOtTiHoSofYYI99a8F/view?usp=sharing" target="_blank" rel="noreferrer">CV</a>
-          <a class="monoLink" href="https://substack.com/@edoardopellegrino" target="_blank" rel="noreferrer">Substack</a>
-        </div>
-      </footer>
-
-    </main>
+    <div class="ctaRow">
+      <a class="btn primary" href="https://substack.com/@edoardopellegrino" target="_blank">Substack</a>
+      <a class="btn" href="https://www.linkedin.com/in/edoardopellegrino27/" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://drive.google.com/file/d/15a0BspCU0NP-sijOtTiHoSofYYI99a8F/view?usp=sharing" target="_blank">CV (PDF)</a>
+    </div>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <aside class="card pad">
+    <div class="sideGrid">
+      <div class="kpi">
+        <b>Tools</b><br/>Excel • Stata • R • Python • Bloomberg • FRED
+      </div>
+      <div class="kpi">
+        <b>Languages</b><br/>English • Italian • French • Mandarin (Beginner–Intermediate)
+      </div>
+      <div class="kpi">
+        <b>Interests</b><br/>Macroeconomics • Global Markets • Digital Assets • FinTech • Value Investing • Quantitative Analysis
+      </div>
+    </div>
+  </aside>
+</section>
+
+<section id="about" class="card pad" style="margin-top:22px">
+  <h2>About</h2>
+  <p style="color:var(--muted)">
+    Enthusiastic final year econometrics undergraduate with experience in macroeconomic and equity research,
+    and structured products. Fluent in English, Italian, and French with strong interests in finance.
+    Aiming to pursue graduate studies before starting a career in financial services.
+  </p>
+</section>
+
+<section id="contact" class="card pad" style="margin-top:22px">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:edoardo.pellegrino@citystgeorges.ac.uk">edoardo.pellegrino@citystgeorges.ac.uk</a></p>
+  <p>Phone: <a href="tel:+447564367139">+44 7564 367139</a></p>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Edoardo Pellegrino</div>
+  <div>
+    <a class="monoLink" href="#top">Back to top</a> ·
+    <a class="monoLink" href="https://substack.com/@edoardopellegrino" target="_blank">Substack</a> ·
+    <a class="monoLink" href="https://drive.google.com/file/d/15a0BspCU0NP-sijOtTiHoSofYYI99a8F/view?usp=sharing" target="_blank">CV</a>
+  </div>
+</footer>
+
+</main>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
